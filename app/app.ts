@@ -8,9 +8,7 @@ Http.request({
   }).then(
     (response: HttpResponse) => {
       // Argument (response) is HttpResponse
-      console.log(`Response Status Code: ${response.statusCode}`)
-      console.log(`Response Headers:`, response.headers)
-      console.log(`Response Content: ${response.content}`)
+      console.log(response)
     },
     e => {}
   )
