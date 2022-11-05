@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@nativescript/core": "~8.3.0",
+    "@superset-ui/embedded-sdk": "*",
     "svelte-native": "~1.0.0"
   },
   "devDependencies": {
