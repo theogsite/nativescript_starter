@@ -1,12 +1,18 @@
 import { svelteNativeNoFrame } from 'svelte-native';
 import App from './App.svelte';
-import { Http } from '@nativescript/core'
+import { Http, HttpResponse } from '@nativescript/core'
 
-Http.request('http://127.0.0.1:8000/fetchGuestToken').then(
-  (result: any) => {
-    console.log(result)
-  },
-  e => {}
-)
+Http.request({
+    url: 'http://127.0.0.1:8000/test',
+    method: 'GET'
+  }).then(
+    (response: HttpResponse) => {
+      // Argument (response) is HttpResponse
+      console.log(`Response Status Code: ${response.statusCode}`)
+      console.log(`Response Headers:`, response.headers)
+      console.log(`Response Content: ${response.content}`)
+    },
+    e => {}
+  )
 
 svelteNativeNoFrame(App, {});
